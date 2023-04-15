@@ -1,0 +1,5 @@
+db-identifier=cc-project
+username=admin
+host=cc-project.c5l9me1mzs0v.us-east-1.rds.amazonaws.com
+pass=lemon1234
+port=3306

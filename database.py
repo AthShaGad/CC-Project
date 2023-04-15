@@ -1,8 +1,21 @@
+
+import boto3
 import mysql.connector
 import streamlit as st
 import pandas as pd
+ENDPOINT="cc-clone-1.c5l9me1mzs0v.us-east-1.rds.amazonaws.com"
+PORT="3306"
+USER="admin"
+REGION="us-east-1"
+DBNAME="rtoC"
+
+# session = boto3.Session(profile_name='default')
+# client = session.client('rds')
+
+# token = client.generate_db_auth_token(DBHostname=ENDPOINT, Port=PORT, DBUsername=USER, Region=REGION)
+
 mydb = mysql.connector.connect(
-host="localhost", user="root", password="", database="rto"
+host=ENDPOINT, user='admin', password='lemon1234',port=PORT, database=DBNAME
 )
 c = mydb.cursor()
 
