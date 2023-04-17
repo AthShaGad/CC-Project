@@ -26,7 +26,7 @@ from database import display_procedure_mod
 
 def main():
     st.title("Rto system")
-    st.subheader("Created by Debanjan Das PES1UG20CS119")
+    st.subheader("Created for CC_Project")
     # inspector=0
     #
     # if st.button("press if you are a citizen"):
