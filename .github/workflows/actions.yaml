@@ -17,7 +17,11 @@ jobs:
             username: ${{secrets.USERNAME}}
             key: ${{secrets.EC2_SSH_KEY}} 
             script: |
-              if pgrep -x "streamlit" > /dev/null; then
+              if pgrep -x "python3" > /dev/null; then
+                pid=$(pgrep -x "streamlit" | head -n 1)
+                kill $pid
+              fi
+              if pgrep -x "python3" > /dev/null; then
                 pid=$(pgrep -x "streamlit" | head -n 1)
                 kill $pid
               fi
@@ -88,4 +92,4 @@ jobs:
           username: ${{secrets.USERNAME}}
           key: ${{secrets.EC2_SSH_KEY}}
           script: |
-            python3 CC-Project/src/run.py --run
+            python3 CC-Project/src/run.py --run &
