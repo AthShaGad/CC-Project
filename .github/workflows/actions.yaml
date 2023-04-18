@@ -34,7 +34,9 @@ jobs:
           username: ${{secrets.USERNAME}}
           key: ${{secrets.EC2_SSH_KEY}} 
           script: |
-            rm -rf CC-Project/
+            if [ -d "CC-Project/" ]; then
+              rm -rf CC-Project/
+            fi
     outputs:
       clean-successful: ${{job.status == 'success'}}
 
