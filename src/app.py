@@ -40,7 +40,7 @@ def main():
 
     # not inspector case
 
-    menu=["Citizen", "address","Details", "Query Line","apply for ll","Apply for DL","Function","LicenseRaj","gender","mod"]
+    menu=["Citizen", "address","Details", "Query Line","apply for ll","Apply for DL"]
     choice=st.sidebar.selectbox("Menu", menu)
     if choice == "Citizen":
         st.subheader("Citizen details")
