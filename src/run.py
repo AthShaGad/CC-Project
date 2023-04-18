@@ -6,6 +6,6 @@ os.chdir("../")
 
 if __name__ == "__main__":
     if len(sys.argv) == 2 and sys.argv[-1] == "--run":
-        os.system("streamlit run src/app.py")
+        os.system("streamlit run src/app.py &")
     else:
         sys.exit(0)

@@ -86,4 +86,4 @@ jobs:
           username: ${{secrets.USERNAME}}
           key: ${{secrets.EC2_SSH_KEY}}
           script: |
-            nohup python3 CC-Project/src/run.py --run
+            python3 CC-Project/src/run.py --run
