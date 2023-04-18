@@ -6,7 +6,7 @@ on:
 
 jobs:
   stop:
-    name: Stop Older Instances
+    name: Stop Older Instance
     runs-on: ubuntu-latest
 
     steps:
@@ -18,14 +18,10 @@ jobs:
             key: ${{secrets.EC2_SSH_KEY}} 
             script: |
               if pgrep -x "python3" > /dev/null; then
-                pid=$(pgrep -x "streamlit" | head -n 1)
+                pid=$(pgrep -x "python3" | head -n 1)
                 kill $pid
               fi
-              if pgrep -x "python3" > /dev/null; then
-                pid=$(pgrep -x "streamlit" | head -n 1)
-                kill $pid
-              fi
-              
+                            
   clean:
     needs: stop
     runs-on: ubuntu-latest
@@ -92,4 +88,4 @@ jobs:
           username: ${{secrets.USERNAME}}
           key: ${{secrets.EC2_SSH_KEY}}
           script: |
-            python3 CC-Project/src/run.py --run &
+            python3 CC-Project/src/run.py --run
