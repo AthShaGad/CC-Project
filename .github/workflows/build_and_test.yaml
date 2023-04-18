@@ -22,4 +22,4 @@ jobs:
         pip install -r requirements.txt
     - name: Run Test
       run: |
-        python3 run.py --test
+        python3 src/run.py --test
