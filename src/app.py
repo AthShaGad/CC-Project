@@ -114,23 +114,7 @@ def main():
             df = pd.DataFrame(results, columns=['firstname','lastname','aadhar','gender','dob','phone_no','street','city','state_code'])
             with st.expander("Citizen details"):
                 st.dataframe(df)
-    elif choice=="LicenseRaj":
-        if st.button("Display information"):
-            results=display_join2()
-            df = pd.DataFrame(results, columns=['firstname','lastname','aadhar','dob'])
-            with st.expander("Details"):
-                st.dataframe(df)
-
-    elif choice=="gender":
-        text=st.text_input("Enter gender")
-        if st.button("press for query"):
-             display_procedure(text)
-            # df = pd.DataFrame(results, columns=['firstname', 'lastname', 'aadhar', 'gender','dob','phone_no'])
-            # with st.expander("Details"):
-            #     st.dataframe(df)
-    elif choice=="mod":
-        if st.button("ll but no dl "):
-            display_procedure_mod()
+    
 
 if __name__ == "__main__":
     main()
