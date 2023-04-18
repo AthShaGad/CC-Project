@@ -1,8 +1,11 @@
 import os
 import sys
 
+os.chdir(os.path.dirname(sys.argv[0]))
+os.chdir("../")
+
 if __name__ == "__main__":
-    if len(sys.argv) == 2 and sys.argv[-1] == "--test":
-        sys.exit(0)
+    if len(sys.argv) == 2 and sys.argv[-1] == "--run":
+        os.system("streamlit run src/app.py")
     else:
-        os.system("streamlit run app.py")
+        sys.exit(0)
