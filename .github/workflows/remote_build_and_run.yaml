@@ -1,0 +1,20 @@
+name: Remote build and run
+
+on: 
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Building on remote instance
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{secrets.HOST_DNS}}
+          username: ${{secrets.USERNAME}}
+          key: ${{secrets.EC2_SSH_KEY}}
+          script: |
+            cd ~/CC-Project/
+            pip3 install -r requirements.txt
+            python3 run.py
